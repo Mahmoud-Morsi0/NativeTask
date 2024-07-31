@@ -2,7 +2,7 @@ import Table from "./Table.js";
 
 const getData = async () => {
     try {
-        const res = await fetch('../data.json');
+        const res = await fetch('https://mahmoud-morsi0.github.io/jsonData/data.json');
         const data = await res.json();
         createTable(data);
     } catch (error) {
