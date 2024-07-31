@@ -7,7 +7,7 @@ export default class Table {
 
     render() {
         return `
-      <tr>
+      <tr >
         <td>${this.dateOfBirth}</td>
         <td>${this.firstName}</td>
         <td>${this.lastName}</td>

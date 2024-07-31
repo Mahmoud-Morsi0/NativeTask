@@ -34,11 +34,9 @@ const groupDataByYear = (data) => {
     if (uniqueYearsData.length > 0) {
         groupedData['unique years'] = uniqueYearsData;
     }
-
     console.log(groupedData)
     return groupedData;
 };
-
 const createTable = (data) => {
     const groupedData = groupDataByYear(data);
     let tableHTML = `<table  
@@ -55,7 +53,7 @@ const createTable = (data) => {
     for (const year in groupedData) {
         const entries = groupedData[year];
 
-        tableHTML += `<tr class="table-primary">
+        tableHTML += `<tr rowspan=${entries.length} class="table-primary">
                         <td colspan="3" style="font-weight: bold;">${year}</td>
                       </tr>
                       `;
@@ -67,8 +65,6 @@ const createTable = (data) => {
     }
 
     tableHTML += '</tbody></table>';
-    // 
-
     document.getElementById('root').insertAdjacentHTML("beforeend", `${tableHTML}`)
 };
 
