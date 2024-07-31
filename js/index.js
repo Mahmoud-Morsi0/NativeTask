@@ -1,8 +1,5 @@
 import Table from "./Table.js";
 
-
-
-
 const getData = async () => {
     try {
         const res = await fetch('../data.json');
@@ -38,6 +35,7 @@ const groupDataByYear = (data) => {
         groupedData['unique years'] = uniqueYearsData;
     }
 
+    console.log(groupedData)
     return groupedData;
 };
 
@@ -69,7 +67,9 @@ const createTable = (data) => {
     }
 
     tableHTML += '</tbody></table>';
-    document.body.innerHTML = tableHTML;
+    // 
+
+    document.getElementById('root').insertAdjacentHTML("beforeend", `${tableHTML}`)
 };
 
 
